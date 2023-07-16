@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<a th:href="@{|/student?index=${index+1}|}">Next</a>
+	<ul th:object="${sv}">
+		<li th:text="*{name}"></li>
+		<li th:text="*{marks}"></li>
+		<li th:text="*{contact.email}"></li>
+	</ul>
+</body>
+</html>

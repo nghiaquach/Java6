@@ -1,0 +1,23 @@
+[
+	{
+		"country": "VN",
+		"email": "teonv@gmail.com",
+		"fullname": "Nguyễn Văn Tèo",
+		"gender": true,
+		"marks": "7.5"
+	},
+	{
+		"country": "VN",
+		"email": "pheonc@gmail.com",
+		"fullname": "Nguyễn Chí Phèo",
+		"gender": true,
+		"marks": "9.5"
+	},
+	{
+		"country": "VN",
+		"email": "nopt@gmail.com",
+		"fullname": "Phạm Thị Nở",
+		"gender": false,
+		"marks": "5.5"
+	}
+]

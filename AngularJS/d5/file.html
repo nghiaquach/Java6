@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>REST API - AngularJS</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style>
+            img {
+                width: 100px;
+                height: 80px;
+                margin: 5px;
+                border-radius: 5px;
+                box-shadow: 0 0 3px gray;
+            }
+        </style>
+    </head>
+
+    <body class="container">
+        <h3>RESTful - File Manager</h3>
+        <div ng-app="app" ng-controller="ctrl">
+            <label>
+                Upload Files:
+                <input type="file" accept="image/*" multiple
+                    onchange="angular.element(this).scope().upload(this.files)" />
+            </label>
+            <hr>
+            <label ng-repeat="filename in filenames" title="Double click to delete">
+                <img ng-src="{{url(filename)}}" ng-dblclick="delete(filename)">
+            </label>
+        </div>
+        <script src="file-ctrl.js"></script>
+    </body>
+
+</html>
