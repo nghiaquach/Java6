@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+	<nav th:replace="~{/home/_menu :: nav}"></nav>
+	<hr>
+	<h2 th:text="${message}"></h2>
+	
+	<hr>
+	<h3>Authentication Information</h3>
+	
+	<h4>#authentication utility object</h4>
+	<ul th:object="${#authentication}">
+		<li th:text="*{name}"></li>
+		<li th:text="*{authorities}"></li>
+	</ul>
+	
+	<h4>#request utility object</h4>
+	<ul th:if="${#request.remoteUser}">
+		<li>userPrincipal
+			<ul th:object="${#request.userPrincipal}">
+				<li th:text="*{name}"></li>
+				<li th:text="*{authorities}"></li>
+			</ul>
+		</li>
+		<li>Username: 
+			<b th:text="${#request.remoteUser}"></b>
+		</li>
+		<li>Is Admin:
+			<b th:text="${#request.isUserInRole('ADMIN')}"></b>
+		</li>
+	</ul>
+</body>
+</html>
